@@ -1,0 +1,44 @@
+\chapter[Desenvolvimento]{Desenvolvimento}
+
+Esse trabalho propõe o desenvolvimento de um serviço que seja capaz de receber uma base de dados, submete-la aos modelos propostos, e então entregar ao usuário uma análise de quais características foram escolhidas por cada um dos modelos e qual o ganho obtido em questão de acurácia de predição.
+
+No capítulo introdutório desse trabalho foram estabelecidas oito etapas a serem realizadas. Parte dessas etapas foram realizadas nesse trabalho, e as restantes serão feitas na segunda.
+
+\section{Etapas Concluídas}
+
+Nessa seção estarão descritas as etapas que já foram concluídas e como foram realizadas. Tais etapas estão melhor detalhadas no capítulo introdutório deste trabalho.
+
+\subsection{Etapa 1: Especificar o processo de seleção de características}
+
+Essa etapa serviu de base para esse trabalho, sendo dela a origem da inspiração para elaborar um serviço capaz de analisar as características de um dado problema e selecioná-las. 
+
+O processo de seleção de características foi descrito em um capítulo a parte por ser de fundamental importancia o seu entendimento para esse trabalho. Foi descrito as diversas formas de combinação de técnicas a fim de demonstrar os vários modelos que se é possível construir.
+
+\subsection{Etapa 2: Pesquisar modelos de seleção de características a serem utilizados}
+
+Após realizado a pesquisa para o entendimento do processo de seleção, foi necessário realizar uma pesquisa para escolher quais modelos seriam utilizados, uma vez que existem vários que podem ser utilizados, e a sua escolha é de fundamental importância na execução desse trabalho.
+
+Os modelos foram escolhidos após pesquisas e análises de viabilidade desses modelos. Um dos pontos levados em consideração para a seleção dos modelos foi a sua implementação, uma vez que a complexidade pode ser alta, além do tempo gasto para realizar os testes da etapa seguinte, que poderia demandar muito tempo. Os modelos selecionados foram: Relief-F \cite{dash_1997}, DTM \cite{dash_1997}, e LFS \cite{gutlein_2009}.
+
+\subsection{Etapa 3: Implementar os modelos de seleção de características}
+
+Os modelos escolhidos deveriam ser implementados, para posteriormente serem testados. Para realizar a implementação foram realiadas pesquisas e foi encontrado a ferramenta Weka. A ferramenta Weka é composta por um conjunto de algoritmos de aprendizado de máquina e de mineração de dados. \cite{weka_2005}. Esses algoritmos podem ser utilizados na própria ferramenta como também podem ser utilizados em códigos java, através da biblioteca Weka, que é de código aberto e possui licença GPL 3 \cite{gpl_2007}.
+
+Os algoritmos utilizados nesse trabalho se encontram disponíveis na ferramenta, sendo assim, foram utilizados de forma direta na mesma. Quando o serviço de aquisição das base de dados para a seleção de características for implementado, serão criados códigos externos a ferramenta para realizar as análises necessárias.
+
+\subsection{Etapa 4: Realizar laboratório nos modelos}
+
+Conforme mostrado no capítulo de Validação de Resultados, os modelos foram testados utilizando duas bases de dados: a base dos passageiros do Titanic e a base MADELON, utilizada em competições de aprendizado de máquina. 
+
+Os resultados obtidos e toda a metodologia utilizada para alcança-los foram documentadas. Esses resultados foram satisfatórios do ponto de vista experimental do trabalho, uma vez que houve ganhos próximos a 40\% na acurácia do classificador utilizado.
+
+\section{Etapas Planejadas}
+
+Essa seção trata das etapas que estão planejadas para a segunda fase desse projeto. As etapas estão descritas no capítulo introdutório deste trabalho, estando presente aqui somente a previsão de conclusão de cada uma delas.
+
+\begin{enumerate}
+	\item{Específicar arquitetura do serviço - Conclusão em março de 2016}
+	\item{Construir protótipo do serviço - Conclusão em maio de 2016}
+	\item{Realizar laboratório no protótipo do serviço - Conclusão em junho de 2016}
+	\item{Coletar e relatar resultados - Conclusão em julho de 2016}
+\end{enumerate}

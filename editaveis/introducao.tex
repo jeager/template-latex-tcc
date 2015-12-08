@@ -2,18 +2,18 @@
 
 
 \section{Motivação}
-Na sociedade atual, cada vez mais milhares de dados são gerados diariamente e há uma dificuldade em se aproveitar ao máximo do conteúdo desses dados, uma vez que é impossível analisar esses dados individualmente para poder identificar o seu real valor. Segundo o Business Intelligence \citeonline{bio2013}, cerca de 90\% dos dados de hoje foram gerados nos últimos
-dois anos, tendo como fontes documentos de textos, e-mails, streaming de vídeos e áudio, transações comerciais, telecomunicações e diversas outras. Estimasse que valor investido para trabalhar esses dados tende a superar a faixa de 27 bilhões em 2015 \citeonline{bio2013}.
-A fim de analisar esses dados, técnicas foram desenvolvidas e ferramentas foram criadas, tais meios visam facilitar a análise dessa grande massa de dados extraindo valor dela. Um questionário levantado pela Bloomberg \citeonline{bloomberg2011} mostra que 97\% das companhias com rendas acima de 100 milhões de dólares usam algum tipo de análise de negócio, e que essa análise se baseia em grandes volumes de dados e seu valor agregado à companhia.
+Na sociedade atual, cada vez mais milhares de dados são gerados diariamente e há uma dificuldade em se aproveitar ao máximo o conteúdo desses dados, uma vez que é impossível analisar esses dados individualmente para poder identificar o seu real valor. Segundo o Business Intelligence \citeonline{bio2013}, cerca de 90\% dos dados de hoje foram gerados nos últimos
+dois anos, tendo como fontes documentos de textos, e-mails, streaming de vídeos e áudio, transações comerciais, telecomunicações e diversas outras. Estimas-se que valor investido para trabalhar esses dados tende a superar a faixa de 27 bilhões em 2015.
 
-Para realizar essas análises várias empresas tem feito investimentos na área de Aprendizado de Máquina. A área de Aprendizado de Máquina é considerada um ramo da Inteligência Artificial, sendo umaárea especializada no estudo e construção de sistemas que sejam capazes de aprender de forma automatizada a partir de dados \cite{brink2014}. Dentro da área de Aprendizado de Máquina existem vários passos para se construir um modelo, e uma das áreas existentes é a área de Seleção de Características para ser utilizada no modelo. Uma característica é uma informação que é potencialmente útil para realizar predições \cite{mitchell_1997}. Problemas de Aprendizado de Máquina costumam gerar muitos dados que aparentam ser úteis, mas que nem sempre definem  com exatidão o problema, ou que ajudem a alcançar o objetivo traçado na construção do modelo, de acordo com \citeonline{guyon_2003}, muitos problemas de Aprendizado de Máquina chegam a variar entre cinco mil a cinquenta mil características que, inicialmente, são consideradas importantes ou relevantes ao problema.
+A fim de analisar esses dados, técnicas foram desenvolvidas e ferramentas foram criadas, tais meios visam facilitar a análise dessa grande massa de dados e extraindo valor dela. Um questionário levantado pela Bloomberg \citeonline{bloomberg2011} mostra que 97\% das companhias com rendas acima de 100 milhões de dólares usam algum tipo de análise de negócio, e que essa análise se baseia em grandes volumes de dados e seu valor agregado à companhia.
 
-Esse grande número de características que são levantadas inicialmente demandam muito tempo para serem processadas, levando a necessidade de reduzir esse número para auxiliar na sua análise. O elevado número ainda acarreta no possível aparecimento de ruídos durante a análise dos dados. A solução para esses problemas é a Seleção de Características. Com essa abordagem é possível escolher os melhores subconjuntos de características que conseguem alcançar os objetivos propostos pelo modelo. 
+Para realizar essas análises, várias empresas tem feito investimentos na área de Aprendizado de Máquina, em inglês \textit{Machine Learning (ML)}. A área de Aprendizado de Máquina é considerada um ramo da Inteligência Artificial, sendo uma área especializada no estudo e construção de sistemas que sejam capazes de aprender de forma automatizada a partir de dados \cite{brink2014}. Dentro da área de Aprendizado de Máquina existem vários passos para se construir um modelo, e um desses passos é o Processo de Seleção de Características em que uma característica é uma informação que é potencialmente útil para realizar predições \cite{mitchell_1997}. 
 
+Problemas de Aprendizado de Máquina costumam gerar muitos dados que aparentam ser úteis, mas que nem sempre definem  com exatidão o problema, ou que ajudem a alcançar o objetivo traçado na construção do modelo, de acordo com \citeonline{guyon_2003}, muitos problemas de Aprendizado de Máquina chegam a variar entre cinco mil a cinquenta mil características que, inicialmente, são consideradas importantes ou relevantes ao problema. Esse grande número de características que são levantadas inicialmente demandam muito tempo para serem processadas, levando a necessidade de reduzir esse número para auxiliar na sua análise. O elevado número ainda acarreta no possível aparecimento de ruídos durante a análise dos dados. A Seleção de Características visa auxiliar esse problema motivado pelas técnicas para lidar com esses dados. Com essa abordagem é possível escolher os melhores subconjuntos de características que conseguem alcançar os objetivos propostos pelo modelo. 
 
 \section{Objetivos}
 
-Esse trabalho tem como objetivo principal a implementação de um serviço que seja capaz de analisar um conjunto de características em meio a três modelos de seleção de características e apontar as vantagens e desvantagens de usar cada algoritmo para seleção.
+Esse trabalho tem como objetivo principal a implementação de um serviço que seja capaz de analisar um conjunto de características e extrair o melhor subconjunto possível analisando-o em meio a três modelos de seleção de características.
 
 \section{Objetivos Específicos}
 
@@ -23,7 +23,7 @@ Para poder alcançar o objetivo geral, esse trabalho foi divido em etapas. Os ob
 	\item{Especificar o processo de seleção de características}
 	\item{Pesquisar modelos de seleção de características a serem utilizados}
 	\item{Implementar os modelos de seleção de características}
-	\item{Realizar laboratório nos modelos com testes focados em uma base de dados classica (a ser determinada)}
+	\item{Realizar laboratório nos modelos}
 	\item{Específicar arquitetura do serviço}
 	\item{Construir protótipo do serviço}
 	\item{Realizar laboratório no protótipo do serviço}
@@ -33,41 +33,37 @@ Para poder alcançar o objetivo geral, esse trabalho foi divido em etapas. Os ob
 
 \section{Justificativa}
 
-EM CONSTRUÇÃO.
+Esse trabalho se torna importante, do ponto de vista prático, uma vez que os recursos computacionais nem sempre conseguem processar as grandes massas de dados contidas em uma certa base de dados. Esse problema tende a ser contornado com o uso do processo de seleção de características, uma vez que ele reduz o número de caracterítiscas a serem utilizados no modelo de Aprendizado de Máquina reduzindo o consumo computacional e agilizando o treinamento e execução dos modelos. Será mostrado também que o uso do processo de seleção de características tende a melhorar o desempnho dos classificadores, já que um problema com muitas características tende a gerar muito ruído. Além disso, esse trabalho propõe a disponibilização de um serviço que seja capaz de analisar uma base de dados e selecionar características relevantes ao problema, podendo ser de utilidade acadêmica para outros trabalhos no ramo de Aprendizado de Máquina.
 
-\section{Estrutura do Trabalho}
-
-EM CONSTRUÇÃO.
-
-\section{Método}
+\section{Método de Pesquisa}
 
 \subsection{Etapa 1: Especificar o processo de seleção de características}
 
-A primeira etapa do trabalho consiste em elucitar e específicar como funciona o processo para seleção de características. Para tal feito foi necessário fazer uma pesquisa bibliográfica visando demonstrar o fluxo do processo de seleção e suas principais etapas.
+A primeira etapa do trabalho consiste em elucidar e específicar como funciona o processo para seleção de características. Para tal feito será necessário fazer uma pesquisa bibliográfica visando demonstrar o fluxo do processo de seleção e suas principais etapas.
 
 \subsection{Etapa 2: Pesquisar modelos de seleção de características a serem utilizados}
 
-Essa etapa consiste em pesquisar os modelos existentes e como são compostos, levando em consideração o processo estudado na etapa anterior e se esses modelos estão consistentes ao processo de seleção de características em si. Então, a partir da pesquisa, escolher os modelos que serão utilizados no serviço a ser implementado.
+Essa etapa consiste em pesquisar os modelos existentes e como são compostos, levando em consideração o processo estudado na etapa anterior e se esses modelos estão consistentes ao processo de seleção de características em si. Após realizada as pesquisas deverá ser escolhido os modelos que serão utilizados no serviço a ser implementado.
 
 \subsection{Etapa 3: Implementar os modelos de seleção de características}
 
-Para cada um dos modelos selecionados, será necessário realizar a sua implementação, seja através de bibliotecas de terceiros ou realizar sua completa implementação. Esses modelos devem ser implementados de forma a receberem um mesmo tipo de dados para que seja possível realizar uma avaliação da sua performance.
+Para cada um dos modelos selecionados, será necessário realizar a sua implementação, seja através de bibliotecas de terceiros, ferramentas, ou realizar sua completa implementação. Esses modelos devem ser implementados de forma a receberem um mesmo tipo de dados para que seja possível realizar uma avaliação da sua performance.
 
-\subsection{Etapa 4: Realizar laboratório nos modelos com testes focados em uma base de dados classica}
+\subsection{Etapa 4: Realizar laboratório nos modelos}
 
-Os modelos implementados deverão ser testados utilizando uma base de dados clássica para que seja possível ter um maior controle sobre os resultados a serem avaliados. O uso da base classica se dá justamente pelo fato de já terem sido utilizadas em outros projetos, trazendo assim uma maior confiabilidade na hora de comparar os resultados.
+Os modelos implementados deverão ser testados utilizando pelo menos uma base de dados. Essa base de dados deve ser tratada (pré-processada) caso necessário, e deve ser a mesma para todos os modelos para que seja possível comparar os seus resultados.
 
 \subsection{Etapa 5: Específicar arquitetura do serviço}
 
-Nessa etapa será feito a especificação de como o serviço proposto por esse trabalho funcionará, descrevendo cada um dos seus módulos e como eles se comunicarão.
+Nessa etapa será feita a especificação de como o serviço proposto por esse trabalho funcionará, descrevendo cada um dos seus módulos e como eles se comunicarão.
 
 \subsection{Etapa 6: Construir protótipo do serviço}
 
-Após feito a especificação da arquitetura, será feito um protótipo de como o serviço funcionará, com todas as funcionalidades levantadas nas etapas anteriores. Esse protótipo deverá ser capaz de receber um conjunto de características e poder fazer o processo de seleção utilizando os modelos selecionados.
+Após feito a especificação da arquitetura, será feito um protótipo do serviço, com todas as funcionalidades levantadas nas etapas anteriores. Esse protótipo deverá ser capaz de receber uma base de cados e fazer o processo de seleção utilizando os modelos selecionados, extraindo o melhor subconjunto de caraterísticas apontado por cada um dos métodos.
 
 \subsection{Etapa 7: Realizar laboratório no protótipo do serviço}
-Com a implementação do protótipo do serviço, será feito um laboratório para garantir que as funcionalidades implementadas estão funcionando de acordo com o projetado, sendo assim, essa etapa consiste em testar o serviço e sua integridade.
+Com a implementação do protótipo do serviço, será feito um laboratório para garantir que as funcionalidades implementadas estão funcionando de acordo com o projeto, sendo assim, essa etapa consiste em testar o serviço e sua integridade.
 
-\subsection{Etapa 8: Coletar e relatar resultados}
+\subsection{Etapa 8: Análise dos resultados}
 
-Essa será a etapa final deste trabalho, consistindo em coletar, analisar e relatar os resultados obtidos pelo serviço, sendo essa fase de suma importância para o trabalho.
+Essa será a etapa final deste trabalho, consistindo em coletar, analisar e relatar os resultados obtidos pelo serviço, sendo essa fase de suma importância para comprovar a eficácia da solução proposta por esse trabalho.
