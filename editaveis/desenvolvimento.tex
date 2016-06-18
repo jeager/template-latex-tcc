@@ -2,43 +2,43 @@
 
 Esse trabalho propõe o desenvolvimento de um serviço que seja capaz de receber uma base de dados, submete-la aos modelos propostos, e então entregar ao usuário uma análise de quais características foram escolhidas por cada um dos modelos e qual o ganho obtido em questão de acurácia de predição.
 
-No capítulo introdutório desse trabalho foram estabelecidas oito etapas a serem realizadas. Parte dessas etapas foram realizadas nesse trabalho, e as restantes serão feitas na segunda.
+No capítulo introdutório desse trabalho foram estabelecidas oito etapas a serem realizadas. Logo abaixo temos um resumo do que foi feito em cada uma dessas etapas e qual o resultado obtido em cada uma delas.
 
-\section{Etapas Concluídas}
+\section{Etapa 1: Especificar o processo de seleção de características}
 
-Nessa seção estarão descritas as etapas que já foram concluídas e como foram realizadas. Tais etapas estão melhor detalhadas no capítulo introdutório deste trabalho.
-
-\subsection{Etapa 1: Especificar o processo de seleção de características}
-
-Essa etapa serviu de base para esse trabalho, sendo dela a origem da inspiração para elaborar um serviço capaz de analisar as características de um dado problema e selecioná-las. 
-
-O processo de seleção de características foi descrito em um capítulo a parte por ser de fundamental importancia o seu entendimento para esse trabalho. Foi descrito as diversas formas de combinação de técnicas a fim de demonstrar os vários modelos que se é possível construir.
+Essa etapa serviu de base para esse trabalho, sendo dela a origem da inspiração para elaborar um serviço capaz de analisar as características de um dado problema e selecioná-las. O processo de seleção de características foi descrito a parte no Capítulo \ref{ch:caracteristicas} por ser de fundamental importancia o seu entendimento para esse trabalho. Neste capítulo foi descrito as diversas formas de combinação de técnicas a fim de demonstrar os vários modelos que se é possível construir.
 
 \subsection{Etapa 2: Pesquisar modelos de seleção de características a serem utilizados}
 
-Após realizado a pesquisa para o entendimento do processo de seleção, foi necessário realizar uma pesquisa para escolher quais modelos seriam utilizados, uma vez que existem vários que podem ser utilizados, e a sua escolha é de fundamental importância na execução desse trabalho.
+Após realizado a pesquisa para o entendimento do processo de seleção, foi necessário realizar uma pesquisa para escolher quais modelos seriam utilizados, uma vez que existem vários, e que a sua escolha é de fundamental importância na execução desse trabalho. 
 
-Os modelos foram escolhidos após pesquisas e análises de viabilidade desses modelos. Um dos pontos levados em consideração para a seleção dos modelos foi a sua implementação, uma vez que a complexidade pode ser alta, além do tempo gasto para realizar os testes da etapa seguinte, que poderia demandar muito tempo. Os modelos selecionados foram: Relief-F \cite{dash_1997}, DTM \cite{dash_1997}, e LFS \cite{gutlein_2009}.
+Os modelos foram escolhidos após pesquisas e análises de viabilidade. Um dos pontos levados em consideração para a seleção dos modelos foi a sua implementação, uma vez que a complexidade pode ser alta, além do tempo gasto para realizar os testes da etapa seguinte, que poderia demandar muito tempo. Os modelos selecionados foram: Relief-F \cite{dash_1997}, DTM \cite{dash_1997}, e LFS \cite{gutlein_2009}. Os modelos estão melhor descritos no Capítulo \ref{ch:modelos}, onde é possível verificar o estudo que foi feito sobre cada um deles.
 
 \subsection{Etapa 3: Implementar os modelos de seleção de características}
 
 Os modelos escolhidos deveriam ser implementados, para posteriormente serem testados. Para realizar a implementação foram realiadas pesquisas e foi encontrado a ferramenta Weka. A ferramenta Weka é composta por um conjunto de algoritmos de aprendizado de máquina e de mineração de dados. \cite{weka_2005}. Esses algoritmos podem ser utilizados na própria ferramenta como também podem ser utilizados em códigos java, através da biblioteca Weka, que é de código aberto e possui licença GPL 3 \cite{gpl_2007}.
 
-Os algoritmos utilizados nesse trabalho se encontram disponíveis na ferramenta, sendo assim, foram utilizados de forma direta na mesma. Quando o serviço de aquisição das base de dados para a seleção de características for implementado, serão criados códigos externos a ferramenta para realizar as análises necessárias.
+Os algoritmos utilizados nesse trabalho se encontram disponíveis na ferramenta, sendo assim, os modelos foram utilizados a partir da ferramenta, e logo em seguida implementados utilizando a biblioteca fornecida pela mesma para serem utilizados no Serviço que foi implementado.
 
 \subsection{Etapa 4: Realizar laboratório nos modelos}
 
-Conforme mostrado no capítulo de Validação de Resultados, os modelos foram testados utilizando duas bases de dados: a base dos passageiros do Titanic e a base MADELON, utilizada em competições de aprendizado de máquina. 
+Conforme mostrado no Capitulo \ref{ch:validacao}, os modelos foram testados utilizando duas bases de dados: a base dos passageiros do Titanic e a base MADELON, utilizada em competições de aprendizado de máquina. 
 
 Os resultados obtidos e toda a metodologia utilizada para alcança-los foram documentadas. Esses resultados foram satisfatórios do ponto de vista experimental do trabalho, uma vez que houve ganhos próximos a 40\% na acurácia do classificador utilizado.
 
-\section{Etapas Planejadas}
+\subsection{Etapa 5: Específicar arquitetura do serviço}
 
-Essa seção trata das etapas que estão planejadas para a segunda fase desse projeto. As etapas estão descritas no capítulo introdutório deste trabalho, estando presente aqui somente a previsão de conclusão de cada uma delas.
+Durante essa etapa foi pensado como deveria ser o funcionamento da aplicação, uma vez que a proposta desse trabalho era criar um serviço que pudesse submeter uma base de dados e extrair as melhores características de acordo com o modelo selecionado. Através de pesquisas, foi proposto um modelo que pode ser melhor visto na Figura \ref{fig:fig13}. Para contemplar essa arquitetura foi necessário buscar ferramentas que fossem capazes de poder integrar a biblioteca Weka, que foi utilizada para executar os modelos, e que auxiliasse a criação de um sistema Web. Levando em consideração essas premissas foram escolhidos as ferramentas Ruby on Rails \cite{ror} e a linguagem JRuby \cite{jruby}. A combinação da linguagem JRuby com a ferramenta Ruby on Rails, permitiria utiliza o poder e agilidade de desenvolvimento Web da ferramenta Ruby on Rails, junto ao uso de bibliotecas implementadas em Java, o que se encaixaria perfeitamente no contexto desse trabalho.
 
-\begin{enumerate}
-	\item{Específicar arquitetura do serviço - Conclusão em março de 2016}
-	\item{Construir protótipo do serviço - Conclusão em maio de 2016}
-	\item{Realizar laboratório no protótipo do serviço - Conclusão em junho de 2016}
-	\item{Coletar e relatar resultados - Conclusão em julho de 2016}
-\end{enumerate}
+Após várias tentativas foi possível realizar a integração das ferramentas e a partir disso foi dado o inicio da Etapa 6, que consistiria em construir o protótipo do serviço.
+
+\subsection{Etapa 6: Construir protótipo do serviço}
+
+Após ter as ferramentas se comunicando e funcionando, foram criadas as entidades do sistema, e a partir delas começou-se a modelar como seria a aplicação, seguindo o que foi proposto no diagrama da arquitetura (Figura \ref{fig:fig13}). Seguindo-se as fases que foram propostas (\ref{sec:fases}) e o fluxograma de execução do serviço (Figura \ref{fig:fig14}), o sistema começou a tomar forma. Um ponto crucial da construção foi extrair os modelos de seleção da ferramenta Weka, uma vez que acessar suas classes e montar os seus modelos foi trabalhoso, porém fez com que o serviço fizesse exatamente o que foi proposto. Tendo como resultado dessa etapa um serviço que receberia uma base de dados, faria seu pre processamento, executaria, e em seguida forneceria os resultados dessa execução.
+
+
+\subsection{Etapa 7: Realizar laboratório no protótipo do serviço}
+
+Para que fosse possível aferir a funcionalidade do serviço, as mesmas bases utilizadas no Capítulo \ref{ch:validacao}, foram utilizadas para que fosse possível verificar se o desempenho seria mentido. Além desse teste, foram testados também bases de dados com estruturas diferentes da proposta na fase de Pré Processamento (\ref{sec:preprocessamento}) e o sistema deveria recusá-las. Em ambos os casos o resultado foi positivo. O desempenho do sistema foi mantido em relação ao que foi feito anteriormente, e o sistema aceitava apenas bases que obedecessem ao que foi estabelecido.
+
+\subsection{Etapa 8: Análise dos resultados}

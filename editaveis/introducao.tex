@@ -13,7 +13,7 @@ Problemas de Aprendizado de Máquina costumam gerar muitos dados que aparentam s
 
 \section{Objetivos}
 
-Esse trabalho tem como objetivo principal a implementação de um serviço que seja capaz de analisar um conjunto de características e extrair o melhor subconjunto possível analisando-o em meio a três modelos de seleção de características.
+Esse trabalho teeve como objetivo principal a implementação de um serviço que fosse capaz de analisar um conjunto de características e extrair o melhor subconjunto possível analisando-o em meio a três modelos de seleção de características.
 
 \section{Objetivos Específicos}
 
@@ -39,31 +39,31 @@ Esse trabalho se torna importante, do ponto de vista prático, uma vez que os re
 
 \subsection{Etapa 1: Especificar o processo de seleção de características}
 
-A primeira etapa do trabalho consiste em elucidar e específicar como funciona o processo para seleção de características. Para tal feito será necessário fazer uma pesquisa bibliográfica visando demonstrar o fluxo do processo de seleção e suas principais etapas.
+A primeira etapa deste trabalho consistiu em elucidar e específicar como funciona o processo para seleção de características. Para tal feito foi necessário fazer uma pesquisa bibliográfica visando demonstrar o fluxo do processo de seleção e suas principais etapas.
 
 \subsection{Etapa 2: Pesquisar modelos de seleção de características a serem utilizados}
 
-Essa etapa consiste em pesquisar os modelos existentes e como são compostos, levando em consideração o processo estudado na etapa anterior e se esses modelos estão consistentes ao processo de seleção de características em si. Após realizada as pesquisas deverá ser escolhido os modelos que serão utilizados no serviço a ser implementado.
+Essa etapa consistiu em pesquisar os modelos existentes e como são compostos, levando em consideração o processo estudado na etapa anterior e se esses modelos estão consistentes ao processo de seleção de características em si. Após realizada as pesquisas foram escolhidos os modelos que são utilizados no serviço implementado.
 
 \subsection{Etapa 3: Implementar os modelos de seleção de características}
 
-Para cada um dos modelos selecionados, será necessário realizar a sua implementação, seja através de bibliotecas de terceiros, ferramentas, ou realizar sua completa implementação. Esses modelos devem ser implementados de forma a receberem um mesmo tipo de dados para que seja possível realizar uma avaliação da sua performance.
+Para cada um dos modelos selecionados, foi realizado a sua implementação através da biblioteca Weka \cite{weka}. Essa escolha foi feita visando uma melhor compatibilidade entre os modelos.
 
 \subsection{Etapa 4: Realizar laboratório nos modelos}
 
-Os modelos implementados deverão ser testados utilizando pelo menos uma base de dados. Essa base de dados deve ser tratada (pré-processada) caso necessário, e deve ser a mesma para todos os modelos para que seja possível comparar os seus resultados.
+Os modelos implementados foram testados utilizando duas base de dados, a Madelon \cite{madelon_2003} e a Titanic. Essas bases de dados foram pré-processadas para preencher as lacunas na base de dados. Os resultados foram obtidos e documentados.
 
 \subsection{Etapa 5: Específicar arquitetura do serviço}
 
-Nessa etapa será feita a especificação de como o serviço proposto por esse trabalho funcionará, descrevendo cada um dos seus módulos e como eles se comunicarão.
+Nessa etapa foi feito a especificação de como o serviço proposto por esse trabalho funcionaria, descrevendo cada uma de suas fases e como se dá o seu fluxo.
 
 \subsection{Etapa 6: Construir protótipo do serviço}
 
-Após feito a especificação da arquitetura, será feito um protótipo do serviço, com todas as funcionalidades levantadas nas etapas anteriores. Esse protótipo deverá ser capaz de receber uma base de cados e fazer o processo de seleção utilizando os modelos selecionados, extraindo o melhor subconjunto de caraterísticas apontado por cada um dos métodos.
+Após feito a especificação da arquitetura, foi feito um protótipo do serviço, com todas as funcionalidades levantadas nas etapas anteriores. Esse protótipo recebe uma base de cados e faz o processo de seleção utilizando o modelo selecionado, extraindo o melhor subconjunto de caraterísticas e mostrando a acurácia alcançada por esse subconjunto.
 
 \subsection{Etapa 7: Realizar laboratório no protótipo do serviço}
-Com a implementação do protótipo do serviço, será feito um laboratório para garantir que as funcionalidades implementadas estão funcionando de acordo com o projeto, sendo assim, essa etapa consiste em testar o serviço e sua integridade.
+Com a implementação do protótipo do serviço, foi feito um laboratório para garantir que as funcionalidades implementadas estão funcionando de acordo com o projeto. Foram utilizadas as mesmas bases e os resultados obtidos são iguais aos obtidos ao testar os modelos fora do serviço.
 
 \subsection{Etapa 8: Análise dos resultados}
 
-Essa será a etapa final deste trabalho, consistindo em coletar, analisar e relatar os resultados obtidos pelo serviço, sendo essa fase de suma importância para comprovar a eficácia da solução proposta por esse trabalho.
+Essa foi a etapa final deste trabalho, consistiu em coletar, analisar e relatar os resultados obtidos pelo serviço, sendo essa fase de suma importância para comprovar a eficácia da solução proposta por esse trabalho.
