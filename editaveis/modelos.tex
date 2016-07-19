@@ -65,6 +65,7 @@ Para um dado conjunto \textit{D} de características, é escolhido um subconjunt
 
 \section{Modelos Escolhidos}
 
+
 \subsection{\textit{Relief-F} - Modelo de Filtro}
 
 Esse modelo foi escolhido pelo fato de ser muito utilizado e obter bons resultados, como apontado por \citeonline{dash_1997} e \citeonline{liu_2005}. O maior problema encontrado com o algoritmo foi o fato de seu predecessor, o Relief, tratar apenas de classes binárias, o que traria certos problemas quanto a escolha das bases de dados a serem utilizadas no trabalho, assim como problemas quanto a compatibilidade de bases que seriam submetidas ao serviço que esse trabalho se propõe a implementar. \textit{Relief-F} resolve esse impasse quanto ao tipo das bases de dados.
@@ -93,5 +94,13 @@ Na Figura 10 é visto como é proposto esse modelo. Pode parecer simples, porém
 
 \subsection{\textit{Linear Forward Selection (LFS)} - Modelo de Envelopamento}
 
-A escolha do modelo LFS foi feita com base na premissa de que já haviam sido escolhidos dois modelos do tipo filtro, então seria bom para o trabalho a escolha de um modelo de envelopamento. O modelo LFS é um modelo de Envelopamento que utiliza a \textit{sequential forward generation} para realizar a busca. Para reduzir o número de conjuntos avaliados pelo algoritmo, primeiramente todos os conjuntos são ranqueados usando alguma medida de Filtro, em seguida são construídos N subconjuntos, em que o primeiro subconjunto possui a característica melhor ranqueada, o segundo subconjunto possui as duas características melhores ranqueadas, o terceiro subconjunto as três características melhores ranqueadas, até que se construa todos os subconjuntos com todas as características. Então é feito a avaliação desses subconjuntos utilizando algum classificador, no caso será utilizado o classificador KNN. \cite{gutlein_2009}.
+A escolha do modelo LFS foi feita com base na premissa de que já haviam sido escolhidos dois modelos do tipo filtro, então seria bom para o trabalho a escolha de um modelo de envelopamento. O modelo LFS é um modelo de Envelopamento que utiliza a \textit{sequential forward generation} para realizar a busca. Para reduzir o número de conjuntos avaliados pelo algoritmo, primeiramente todos as características são ranqueados usando alguma medida de Filtro, em seguida são construídos N subconjuntos, em que o primeiro subconjunto possui a característica melhor ranqueada, o segundo subconjunto possui as duas características melhores ranqueadas, o terceiro subconjunto as três características melhores ranqueadas, até que se construa todos os subconjuntos com todas as características. Então é feito a avaliação desses subconjuntos utilizando algum classificador, no caso será utilizado o classificador KNN. \cite{gutlein_2009}.
+
+\subsection{Implementação dos Modelos}
+
+Para realizar a implementação dos modelos, foram feitas pesquisas de ferramentas de mineração de dados. Durante as pesquisas foram encontradas ferramentas capazes de auxiliar o projeto, sendo as que mais se destacam: Scikit-learn \cite{scikit}, Weka \cite{weka_2005} e Apache Spark \cite{spark}. Dentre as ferramentas, a que mais se destacou a esse trabalho foi a Weka, pelo fato dela ter alguns dos métodos já implementados, e pelo fato dela ser uma biblioteca código aberto, o que facilitaria caso alguma mudança fosse necessária. A biblioteca também possui uma grande popularidade e comunidade, o que auxilia no seu uso.
+
+A ferramenta Weka é composta por um conjunto de algoritmos de aprendizado de máquina e de mineração de dados. \cite{weka_2005}. Esses algoritmos podem ser utilizados na própria ferramenta como também podem ser utilizados em códigos java, através da biblioteca Weka, que é de código aberto e possui licença GPL 3 \cite{gpl_2007}.
+
+Os modelos foram implementados com o auxílio da biblioteca Weka, e seus resultados estão descritos no próximo capítulo.
 

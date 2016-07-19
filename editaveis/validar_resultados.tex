@@ -1,7 +1,7 @@
 \chapter[Validação dos Resultados]{Validação dos Resultados}
 \label{ch:validacao}
 
-Nesse capítulo serão analisados os modelos propostos no capítulo anterior. Cada um dos modelos deverá selecionar um conjunto de características para ser utilizado em um classificador, e então deverão ter seus resultados coletados e comparados. 
+Nesse capítulo são analisados os modelos propostos no capítulo anterior. Cada um dos modelos deverá selecionar um conjunto de características para ser utilizado em um classificador, e então deverão ter seus resultados coletados e comparados. 
 
 
 \section{Validação dos Modelos}
@@ -14,7 +14,6 @@ Os modelos selecionados devem contribuir para um melhor desempenho de um dado mo
 		\subitem{Remover características que sejam do tipo texto}
 		\subitem{Substituir os campos vazios pela mediana daquele campo}
 	\item{Da base de dados, será utilizado 2/3 dela para realizar o treinamento e 1/3 para realizar os testes}
-	\item{Cada modelo deverá ser executado 10 vezes e o desempenho final será a média desses resultados.}
 \end{enumerate}
 
 O classificador escolhido foi o \textit{k-Nearest Neighbours} por ser um classificador simples apesar de ser computacionalmente exaustivo. Um dos motivos que levaram a escolha desse classificador é o fato de que ele é muito sensível às características irrelevantes, fazendo com que o processo de seleção de características seja um forte aliado a esse classificador.
@@ -43,17 +42,17 @@ As características da base de dados do Titanic, após ser realizado o pré proc
 \centering
 \caption{Características da base Titanic}
 \label{my-label}
-\begin{tabular}{|l|l|}
+\begin{tabular}{|l|l|l|}
 \hline
-\textbf{Característica} & \textbf{Tipo}            \\ \hline
-survived                & Nominal \{0, 1\}         \\ \hline
-pClass                  & Numérico                 \\ \hline
-sex                     & Nominal \{male, female\} \\ \hline
-age                     & Numérico                 \\ \hline
-sibsp                   & Numérico                 \\ \hline
-parch                   & Numérico                 \\ \hline
-fare                    & Numérico                 \\ \hline
-embarked                & Nominal \{Q,S,C\}        \\ \hline
+\textbf{Característica} & \textbf{Tipo}            & \textbf{Descrição}\\ \hline
+survived                & Nominal \{0, 1\}         & É a classe da base de dados\\ \hline
+pClass                  & Numérico                 & A classe na qual viajou a pessoa\\ \hline
+sex                     & Nominal \{male, female\} & Sexo do viajante\\ \hline
+age                     & Numérico                 & A idade do viajante\\ \hline
+sibsp                   & Numérico                 & Número de parentes abordo\\ \hline
+parch                   & Numérico                 & Número de filhos abordo\\ \hline
+fare                    & Numérico                 & Tarifa paga\\ \hline
+embarked                & Nominal \{Q,S,C\}        & Se o usuário embarcou ou não\\ \hline
 \end{tabular}
 \end{table}
 
@@ -67,7 +66,7 @@ O classificador a ser utilizado, as instancias e a acurácia inicial do classifi
 \hline
 \textbf{Classificador}        & \multicolumn{1}{c|}{\textbf{kNN (Weka.IBk)}} \\ \hline
 N. de características inicial & 8                                            \\ \hline
-Acurácia inicial média        & 72.8977\%                                   \\ \hline
+Acurácia inicial        & 72.8977\%                                   \\ \hline
 Instancias para treino        & 607                                          \\ \hline
 Instancias para teste         & 303                                           \\ \hline
 \end{tabular}
@@ -81,7 +80,7 @@ Após cada um dos métodos de seleção serem aplicados à base de dados, os res
 \label{my-label}
 \begin{tabular}{|c|c|c|}
 \hline
-\multicolumn{1}{|l|}{\textbf{Modelo}} & \textbf{Características Mantidas} & \multicolumn{1}{l|}{\textbf{Acurácia média Classificador}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{Modelo}} & \textbf{Características Mantidas} & \multicolumn{1}{l|}{\textbf{Acurácia do Classificador}} \\ \hline
 Relief-F                              & sex, pClass, age                  & 80.5281\%                                            \\ \hline
 DTM                                   & sex, age, sibsp, pclass, fare     & 78.5479\%                                            \\ \hline
 LFS                                   & sex, fare                         & 81.538\%                                             \\ \hline
@@ -103,7 +102,7 @@ Os resultados acima são para uma base com poucas características mas ainda sim
 \textbf{Classificador}        & \multicolumn{1}{c|}{\textbf{KNN (Weka.IBk)}} \\ \hline
 Base de dados                 & MADELON                               \\ \hline
 N. de características inicial & 500                                        \\ \hline
-Acurácia inicial média        & 52.0194\%                                   \\ \hline
+Acurácia inicial        & 52.0194\%                                   \\ \hline
 Tempo para treinamento        & 12 segundos                                  \\ \hline
 Instancias para treino        & 1227                                          \\ \hline
 Instancias para teste         & 613                                          \\ \hline
@@ -119,7 +118,7 @@ Após cada um dos métodos de seleção ser aplicado à base de dados, os result
 \label{my-label}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Modelo} & \textbf{\begin{tabular}[c]{@{}c@{}}Características \\ Mantidas\end{tabular}}                                                                                                                                           & \textbf{\begin{tabular}[c]{@{}c@{}}Acurácia \\ média do \\ Classificador\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Tempo de\\ treinamento \\ médio\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Tempo medio \\ para selecionar \\ características\end{tabular}} \\ \hline
+\textbf{Modelo} & \textbf{\begin{tabular}[c]{@{}c@{}}Características \\ Mantidas\end{tabular}}                                                                                                                                           & \textbf{\begin{tabular}[c]{@{}c@{}}Acurácia \\ do Classificador\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Tempo de\\ treinamento \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Tempo \\ para selecionar \\ características\end{tabular}} \\ \hline
 Relief-F        & \begin{tabular}[c]{@{}c@{}}a\_28, a\_48, a\_64, \\ a\_105, a\_128, a\_153, \\ a\_241, a\_281, a\_318, \\ a\_336, a\_338, a\_378, \\ a\_433, a\_442, a\_451, \\ a\_453, a\_455, a\_472, \\ a\_475, a\_493.\end{tabular} & 88.6914\%                                                                  & \textless 1 segundo                                                     & 37 segundos                                                                                  \\ \hline
 DTM             & \begin{tabular}[c]{@{}c@{}}a\_105, a\_442, a\_338, \\ a\_475, a\_451, a\_128, \\ a\_28, a\_336, a\_119, \\ a\_493, a\_48, a\_251, \\ a\_292, a\_318, a\_433\end{tabular}                                               & 80.937\%                                                                   & \textless 1 segundo                                                     & 2 segundos                                                                                   \\ \hline
 LFS             & \begin{tabular}[c]{@{}c@{}}a\_105, a\_128, a\_241, \\ a\_336, a\_338, a\_442\end{tabular}                                                                                                                              & 91.2601\%                                                                  & \textless 1 segundo.                                                    & 332 segundos                                                                                 \\ \hline

@@ -44,7 +44,7 @@ Busca completa - baseia-se em analisar todos os subconjuntos possíveis. Essa bu
 
 Busca sequencial - baseia-se em remover ou adicionar características conforme é executado. Esse tipo de busca pode acarretar em perda de alguns subconjuntos ótimos, porém é mais rapido e exige menos recursos computacionais, sendo um problema da ordem de $O(N^2)$. \cite{dash_1997} Existem três formas de realizar esse tipo busca: \textit{sequential forward generation (SFG)}, \textit{ sequential backward generation (SBG)}, \textit{bi-drectional generation}. A primeira consiste em começar com um conjunto vazio e ir adicionando características a ele. Já a \textit{backward} consiste em usar um conjunto completo e ir removendo características sucessivamente. A terceira forma consiste em adicionar e remover simultaneamente, ela é composta por duas buscas simultaneas que geralmente partem do meio do conjunto inicial, com o objetivo de encontrar o melhor subconjunto possível. \cite{liu_2005}. 
 
-Busca randomica - esta segue duas frentes. A primeira utiliza busca sequencial e adiciona as características de forma randomica. A outra frente gera o próximo subconjunto de maneira completamente randomica, ou seja, gera todo o subconjunto de características aleatórias. Tende a ser um problema da ordem de $O(N^2)$ \cite{liu_2005}.
+Busca randomica - esta pode ser feita de duas maneiras distintas. A primeira utiliza busca sequencial e adiciona as características de forma randomica, a busca pode trabalhar tanto de maneira \textit{forward}, ou seja, adicionando características, ou de maneira \textit{backward}, onde as características são removidas, e ambos casos é feito de maneira randômica. A outra frente gera o próximo subconjunto de maneira completamente randomica, ou seja, gera todo o subconjunto de características aleatórias. Tende a ser um problema da ordem de $O(N^2)$ \cite{liu_2005}.
 
 \section{Avaliação do Subconjunto}
 
@@ -59,11 +59,11 @@ Para poder dizer quão bom é um subconjunto é preciso definir um critério. Es
 
 \subsection{Medidas de informação}
 
-A medida de informação determina a informação obtida por uma dada característica \cite{liu_2005}. Isso implica em dizer que uma característica A1 oferece mais informações do que uma característica A2, se dado uma função de incerteza F(x), A1 reduza o grau de incerteza mais do que A2.
+A medida de informação determina a informação obtida por uma dada característica \cite{liu_2005}. Isso implica em dizer que uma característica A1 oferece mais informações do que uma característica A2, se dado uma função de incerteza F(x), em que 'x' é uma característica, A1 reduza o grau de incerteza mais do que A2 se F(A1) > F(A2).
 
 \subsection{Medidas de distancia}
 
-Também conhecido como medida de separabilidade, medida de divergencia ou medida discriminativa, essa medida é feita através do calculo da distancia entre duas classes, ou seja, calcular o quanto uma característica consegue  separar duas classes de maneira distinta. Sendo F(X) o calculo da distancia, uma característica A1 separar melhor duas classes do que A2 se F(A1) > F(A2). \cite{huan_1998}
+Também conhecido como medida de separabilidade, medida de divergencia ou medida discriminativa, essa medida é feita através do calculo da distancia entre duas classes, ou seja, calcular o quanto uma característica consegue  separar duas classes de maneira distinta. Sendo F(X) o calculo da distancia, uma característica A1 separa melhor duas classes do que A2 se F(A1) > F(A2). \cite{huan_1998}
 
 \subsection{Medidas de dependencia}
 
@@ -71,7 +71,7 @@ Conhecida também como medida de correlação ou de similaridade, essa medida vi
 
 \subsection{Medidas de consistência}
 
-As medidas anteriores tem o propósito de achar as melhores características que consigam destinguir uma classe de outra. Porém elas não conseguem distinguir características que sejam igualmente boas, ou seja, que apontem para um mesmo resultado e gere redundancia nos subconjuntos. A medida de consistência procura achar um menor número de características que seja tão consistente em seprar as classes quanto ao conjunto inicial. Ou seja, dado uma função de consistência F(X, Y) em relação a classe C, o subconjunto S1 será consistente se F(S1, C) = F(Si, C), sendo S o conjunto inicial \cite{liu_2005}
+As medidas anteriores tem o propósito de achar as melhores características que consigam destinguir uma classe de outra. Porém elas não conseguem distinguir características que sejam igualmente boas, ou seja, que apontem para um mesmo resultado e gere redundancia nos subconjuntos. A medida de consistência procura achar um menor número de características que seja tão consistente em seprar as classes quanto ao conjunto inicial. Ou seja, dado uma função de consistência F(X, Y) em relação a classe C, o subconjunto S1 será consistente se F(S1, C) = F(Si, C), sendo Si o conjunto inicial \cite{liu_2005}
 
 \subsection{Medidas de acurácia}
 
@@ -85,7 +85,7 @@ Os critérios de parada são comumente utilizados para que não seja necessário
 
 \section{Validação de resultados}
 
-Para se avaliar os resultado, primeiramente deve-se ter algum conhecimento sobre os dados que foram submetidos para a seleção de características. Existem vários cálculos que podem ser feitos para que seja posível validar que o processo de seleção realmente resultou em um subconjunto com características que resolva o problema de uma maneira melhor do que o conjunto de características iniciais. Podemos utilizar três dimensões para poder verificar se um método de seleção realmente foi efetivo, são eles: acurácia de predição e o número de características selecionadas \cite{huan_1998}. Além dessas dimensões, devemos levar em consideração alguns fatos dos próprios algorítimos em si, como a velocidade de treinamento do algoritmo e a generalidade das características selecionadas. 
+Para se avaliar os resultado, primeiramente deve-se ter algum conhecimento sobre os dados que foram submetidos para a seleção de características. Existem vários cálculos que podem ser feitos para que seja posível validar que o processo de seleção realmente resultou em um subconjunto com características que resolva o problema de uma maneira melhor do que o conjunto de características iniciais. Podemos utilizar três dimensões para poder verificar se um método de seleção realmente foi efetivo, são eles: acurácia de predição, o número de características selecionadas e o tempo gasto para realizar a seleção de características \cite{huan_1998}. Além dessas dimensões, devemos levar em consideração alguns fatos dos próprios algorítimos em si, como a velocidade de treinamento do algoritmo e a generalidade das características selecionadas. 
 
 Uma maneira bem comum de se validar os resultados é verificar se a acurácia do classificador foi melhorada, ou se a diminuição do número de características reduziu o tempo de treinamento e execução de um dado classificador sem prejudicar a sua acurácia \cite{liu_2005}.
 
